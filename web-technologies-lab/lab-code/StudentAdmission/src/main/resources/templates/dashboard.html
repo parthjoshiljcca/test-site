@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Admission Dashboard</title>
+  <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet">
+  <link th:href="@{/css/master.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">Lab Project for Student Admission using Spring Boot</h1>
+  <div class="text-center mt-4">
+    <a class="btn btn-primary" th:href="@{/stdForm}">
+      Student Form <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <table class="table mt-4">
+    <thead><tr><th colspan="2">Student Information Via Controller</th></tr></thead>
+    <tbody>
+      <tr><th>Name:</th>       <td th:text="${student?.name}"></td></tr>
+      <tr><th>Email Id:</th>   <td th:text="${student?.emailId}"></td></tr>
+      <tr><th>Address:</th>    <td th:text="${student?.address1}"></td></tr>
+      <tr><th>Address 2:</th>  <td th:text="${student?.address2}"></td></tr>
+      <tr><th>City:</th>       <td th:text="${student?.city}"></td></tr>
+      <tr><th>State:</th>      <td th:text="${student?.state}"></td></tr>
+      <tr><th>Zip Code:</th>   <td th:text="${student?.zipCode}"></td></tr>
+      <tr><th>Entry Date:</th> <td th:text="${student?.entryDate}"></td></tr>
+      <tr><th>IP Address:</th> <td th:text="${student?.ip}"></td></tr>
+    </tbody>
+  </table>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
