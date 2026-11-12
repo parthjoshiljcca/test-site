@@ -5,7 +5,7 @@ Release: **14 Nov 2026**. Format: **9:16 only**.
 Files:
 - `Who_Parth_Teaser_9x16.mp4`: teaser (post before release)
 - `Who_Parth_Reels_9x16.mp4`: full song (release day)
-- `Who_Parth_Thumbnail_9x16.jpg`: Reel cover / Shorts thumbnail
+- `Who_Parth_Thumbnail_9x16.jpg`: Reel cover / poster (your photo + "Who Parth?" + "The Indian Classical Beats Rap Song, By Parth D. Joshi")
 
 ---
 
@@ -58,7 +58,7 @@ Who Parth? Hai Kaun? 🔥 Coming 14 Nov | Hindi x Gujarati Rap #Shorts
 
 ### Title (full song)
 ```
-Who Parth? 🔥 Official Lyrical Video | Hindi x Gujarati x English Rap | Motivational Song 2026
+Who Parth? 🔥 The Indian Classical Beats Rap Song | Parth D. Joshi | Official Lyrical Video
 ```
 
 ### Description (full song)
@@ -68,8 +68,8 @@ Who Parth? 🔥 Official Lyrical Video | Hindi x Gujarati x English Rap | Motiva
 12 saal ki tapasya, hazaaron students ki jeet, aur ek hi pehchaan — kaam.
 Hindi, Gujarati aur English rap ka mix, anime-style lyrical video ke saath.
 
-🎤 Song: Who Parth?
-🎙️ Artist: Parth Joshi
+🎤 Song: Who Parth? — The Indian Classical Beats Rap Song
+🎙️ Artist: Parth D. Joshi
 📅 Release: 14 Nov 2026
 🌐 Languages: Hindi | Gujarati | English
 
@@ -87,7 +87,7 @@ Jo doosron ko banaata hai, wahi hota hai sardaar
 
 ### Tags (YouTube Studio → Tags)
 ```
-who parth, who parth song, who parth lyrics, parth joshi, hindi rap song 2026, gujarati rap song, motivational rap song, teacher motivational song, desi hip hop, hindi gujarati rap, anime lyrical video, new hindi song 2026, motivational song hindi
+who parth, who parth song, who parth lyrics, parth joshi, parth d joshi, indian classical beats rap, indian classical rap song, hindi rap song 2026, gujarati rap song, motivational rap song, teacher motivational song, desi hip hop, hindi gujarati rap, anime lyrical video, new hindi song 2026, motivational song hindi
 ```
 
 ### Thumbnail
