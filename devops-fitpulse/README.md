@@ -3,7 +3,7 @@
 Covers pages 0–10 of *DevOps Practical — Case Studies*: guide, FitPulse Q1 (FP-101),
 Q2 (FP-102) and Q3 (FP-103), as a from-zero tutorial.
 
-- `FitPulse_Q1-Q3_Hinglish_explainer.mp4` — 16:9, 1080p, ~19 min, Hinglish voice-over with burned-in Roman Hinglish captions, starts from zero
+- `FitPulse_Q1-Q3_Hinglish_explainer.mp4` — 16:9, 1080p, ~14.5 min, Hinglish voice-over with burned-in Roman Hinglish captions, starts from zero
 - `screenshots/` — terminal output of every step, captured from a real run (git 2.43)
 
 ## Video chapters
@@ -11,11 +11,11 @@ Q2 (FP-102) and Q3 (FP-103), as a from-zero tutorial.
 | Time | Chapter |
 |---|---|
 | 00:00 | Intro + plan |
-| 00:43 | Basics — Git, commit, repo, staging, GitHub, branch/PR, CI |
-| 04:45 | Q1 — config, init, .gitignore, two commits, remote, push |
-| 11:25 | Q2 — feature branch, Pull Request, merge, pull, delete branch, graph |
-| 15:14 | Q3 — GitHub Actions workflow, green run, red run, restore |
-| 18:40 | Final history graph + wrap-up |
+| 00:31 | Basics — Git, commit, repo, staging, GitHub, branch/PR, CI |
+| 03:33 | Q1 — config, init, .gitignore, two commits, remote, push |
+| 08:30 | Q2 — feature branch, Pull Request, merge, pull, delete branch, graph |
+| 11:20 | Q3 — GitHub Actions workflow, green run, red run, restore |
+| 13:54 | Final history graph + wrap-up |
 
 ## Lab notes
 
