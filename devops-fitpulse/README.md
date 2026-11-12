@@ -1,9 +1,9 @@
 # FitPulse Gym case study (Q1 · Q2 · Q3) — executed run + Hinglish explainer
 
 Covers pages 0–10 of *DevOps Practical — Case Studies*: guide, FitPulse Q1 (FP-101),
-Q2 (FP-102), Q3 (FP-103) and the examiner checklist.
+Q2 (FP-102) and Q3 (FP-103), as a from-zero tutorial.
 
-- `FitPulse_Q1-Q3_Hinglish_explainer.mp4` — 16:9, 1080p, ~19.5 min, Hinglish voice-over with burned-in Roman Hinglish captions, starts from zero
+- `FitPulse_Q1-Q3_Hinglish_explainer.mp4` — 16:9, 1080p, ~19 min, Hinglish voice-over with burned-in Roman Hinglish captions, starts from zero
 - `screenshots/` — terminal output of every step, captured from a real run (git 2.43)
 
 ## Video chapters
@@ -11,11 +11,11 @@ Q2 (FP-102), Q3 (FP-103) and the examiner checklist.
 | Time | Chapter |
 |---|---|
 | 00:00 | Intro + plan |
-| 00:38 | Basics — Git, commit, repo, staging, GitHub, branch/PR, CI |
-| 04:37 | Q1 — config, init, .gitignore, two commits, remote, push |
-| 11:07 | Q2 — feature branch, Pull Request, merge, pull, delete branch, graph |
-| 14:46 | Q3 — GitHub Actions workflow, green run, red run, restore |
-| 18:22 | Examiner checklist + final history graph |
+| 00:43 | Basics — Git, commit, repo, staging, GitHub, branch/PR, CI |
+| 04:45 | Q1 — config, init, .gitignore, two commits, remote, push |
+| 11:25 | Q2 — feature branch, Pull Request, merge, pull, delete branch, graph |
+| 15:14 | Q3 — GitHub Actions workflow, green run, red run, restore |
+| 18:40 | Final history graph + wrap-up |
 
 ## Lab notes
 
