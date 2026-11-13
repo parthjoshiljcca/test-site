@@ -9,21 +9,22 @@ Files:
 
 ---
 
-## 1. Instagram Reel — Teaser (post 12–13 Nov)
+## 1. Instagram Reel — Teaser (post today, 13 Nov)
 
 ```
 Kisi ne poocha "Who Parth? Hai kaun?" 🤔
-Jawaab aa raha hai… 14 Nov 2026 🔥
+Jawaab kal aa raha hai… 14 Nov 2026 🔥
 
-12 saal ki tapasya. Hazaaron students. Ek hi naam.
-Hindi + Gujarati + English rap, ek hi gaane mein 🎤
+Who Parth? — The Indian Classical Beats Rap Song 🎶
+Sitar, classical beats aur Hindi + Gujarati + English rap, ek hi gaane mein 🎤
 
+🎙️ By Parth D. Joshi
 🗓️ Full song OUT 14 NOV
-🔔 Follow karo taaki miss na ho!
+🔔 Follow karo aur post save karo, taaki miss na ho!
 
-Who Parth new song | Hindi rap song 2026 | Gujarati rap | motivational rap song | teacher motivational song | desi hip hop | anime lyrical video | coming soon
+Who Parth song | Parth D. Joshi | Indian classical rap song | Hindi rap song 2026 | Gujarati rap | sitar rap | motivational rap song | new song coming soon
 
-#WhoParth #HindiRap #GujaratiRap #DesiHipHop #MotivationalSong
+#WhoParth #IndianClassicalRap #HindiRap #GujaratiRap #DesiHipHop
 ```
 
 ## 2. Instagram Reel — Full song (post 14 Nov)
@@ -31,18 +32,22 @@ Who Parth new song | Hindi rap song 2026 | Gujarati rap | motivational rap song 
 ```
 "Who Parth?" — ab samjhe to achha hai 🔥
 
-Jo doosron ko banaata hai, wahi hota hai sardaar 👑
-12 saal ki mehnat, hazaaron students ki jeet — ye gaana unke liye
-jinhone kabhi poocha "Parth hai kaun?" 😎
+Who Parth? — The Indian Classical Beats Rap Song
+🎙️ By Parth D. Joshi
 
-🎧 Hindi + Gujarati + English rap
-📺 Full lyrical video OUT NOW
+Jo doosron ko banaata hai, wahi hota hai sardaar 👑
+Ye gaana unke liye, jinhone kabhi poocha "Parth hai kaun?" 😎
+
+🎧 Sitar + classical beats + Hindi, Gujarati & English rap
+📺 Full lyrical video OUT NOW, link bio mein 🔗
 
 Comment mein batao, kaunsi line sabse best lagi? 👇
 
-Who Parth song | Who Parth lyrics | Hindi rap song 2026 | Gujarati rap song | motivational rap | teacher song | desi hip hop | anime lyrical video | new Hindi song 2026
+Who Parth song | Who Parth lyrics | Parth D. Joshi | Indian classical rap song | Hindi rap song 2026 | Gujarati rap song | sitar rap | motivational rap | new Hindi song 2026
 
-#WhoParth #HindiRap #GujaratiRap #DesiHipHop #MotivationalSong
+Song made with AI music tools. Visuals are AI-generated anime art. © 2026 Parth D. Joshi
+
+#WhoParth #IndianClassicalRap #HindiRap #GujaratiRap #DesiHipHop
 ```
 
 > Tip: Reel ka cover `Who_Parth_Thumbnail_9x16.jpg` lagao ("Edit cover" → "Add from camera roll").
