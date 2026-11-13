@@ -1,6 +1,6 @@
 # Who Parth? — Social Media Kit
 
-Release: **14 Nov 2026**. Format: **9:16 only**.
+Release: **14 Nov 2026**. Instagram/Shorts: **9:16**. YouTube main video: **16:9**.
 
 Files:
 - `Who_Parth_Teaser_9x16.mp4`: teaser (post before release)
@@ -93,3 +93,73 @@ who parth, who parth song, who parth lyrics, parth joshi, parth d joshi, indian 
 ### Thumbnail
 - **Shorts:** upload karte waqt app mein "Thumbnail" choose karo. YouTube abhi Shorts ke liye video ka hi koi frame chunne deta hai (custom image wala option har account mein nahi milta), isliye video ke shuru ka "WHO PARTH?" title frame select kar lena.
 - `Who_Parth_Thumbnail_9x16.jpg` Instagram cover aur WhatsApp Status/poster ke liye use karo.
+
+---
+
+## 4. YouTube — Main song (16:9 full video)
+
+Video: `Who_Parth_Lyrical_Video.mp4` (upload the full-quality HQ file sent in chat)
+Thumbnail: `Who_Parth_Thumbnail_16x9.jpg` (1280×720)
+
+### Title
+```
+Who Parth? 🔥 | The Indian Classical Beats Rap Song | Parth D. Joshi | Official Lyrical Video
+```
+Alternate (shorter):
+```
+Who Parth? – The Indian Classical Beats Rap Song | Parth D. Joshi
+```
+
+### Description
+```
+"Who Parth? Hai kaun?" — kisi ne poocha, aur jawaab ek gaana ban gaya. 🔥
+
+Who Parth? — The Indian Classical Beats Rap Song by Parth D. Joshi.
+Indian classical beats, sitar, aur Hindi + Gujarati + English rap ka ek mix.
+12 saal ki tapasya, hazaaron students ki jeet, aur ek hi pehchaan — kaam.
+
+🎤 Song: Who Parth?
+🎙️ Artist & Lyrics: Parth D. Joshi
+🎼 Genre: Indian Classical Beats / Rap
+🌐 Languages: Hindi | Gujarati | English
+📅 Release: 14 November 2026
+
+⏱️ CHAPTERS
+0:00 Intro
+0:25 Verse 1
+0:46 Hook
+1:08 Verse 2
+1:24 Gujarati Rap
+1:50 English Rap
+2:00 Bridge
+2:06 Final Hook
+2:19 Outro
+
+📝 HOOK
+Who Parth? Haan wahi, jiska chalta hai kaam
+Who Parth? Haan wahi, jiska goonjta hai naam
+Kyun itna important? To suniye sarkaar
+Jo doosron ko banaata hai, wahi hota hai sardaar
+
+👍 Pasand aaya to Like, Share aur Subscribe karo!
+💬 Comment mein batao — kaunsi line dil ko lagi?
+
+⚠️ DISCLAIMER
+• This song was produced with the help of AI music tools. The visuals in this lyrical video are AI-generated anime-style artwork and motion graphics. They do not show real events.
+• This song is a personal, motivational expression. It is not meant to hurt, target or insult any person, group, community or organisation. Any resemblance to any person or situation is purely coincidental.
+• © 2026 Parth D. Joshi. All rights reserved. Please do not re-upload, copy or use this song or video without permission. Sharing the original link is always welcome. 🙏
+
+#WhoParth #IndianClassicalRap #HindiRap #GujaratiRap #ParthDJoshi
+```
+
+### Tags (YouTube Studio → Tags)
+```
+who parth, who parth song, who parth lyrics, parth d joshi, parth joshi, indian classical beats rap, indian classical rap song, hindi rap song 2026, gujarati rap song, motivational rap song, sitar rap, desi hip hop, anime lyrical video, new hindi song 2026
+```
+
+### Upload settings (YouTube Studio)
+- **Altered or synthetic content:** "No" is fine. The visuals are clearly anime-style, not realistic, so YouTube doesn't require this label. The AI disclosure in the description is enough.
+- **Made for kids:** No
+- **Category:** Music
+- **Thumbnail:** upload `Who_Parth_Thumbnail_16x9.jpg`
+- **Premiere:** schedule as a Premiere on 14 Nov so the teaser audience gets a reminder.
