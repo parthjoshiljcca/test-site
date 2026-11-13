@@ -23,6 +23,7 @@ const vocabByJp = Object.fromEntries(ALLVOCAB.map(v => [v.k, v]));
 const DEF = {xp:0, streak:0, last:null, days:{}, log:{}, traces:0, speaks:0, badges:[], cur:1,
   settings:{rate:0.85, sfx:true, unlockAll:false, jaVoice:'', hiVoice:'', theme:'auto'}};
 let S;
+let deferredPrompt = null;
 try { S = JSON.parse(localStorage.getItem('nihongoYatra') || 'null'); } catch (e) { S = null; }
 S = Object.assign(structuredClone(DEF), S || {});
 S.settings = Object.assign(structuredClone(DEF.settings), S.settings || {});
@@ -51,9 +52,10 @@ function tone(freq, dur = .12, type = 'sine', when = 0, vol = .18) {
     o.connect(g).connect(AC.destination); o.start(t); o.stop(t + dur + .02);
   } catch (e) {}
 }
+const buzz = p => { try { if (S.settings.sfx && navigator.vibrate) navigator.vibrate(p); } catch (e) {} };
 const sfx = {
-  ok(){ tone(660,.1,'triangle'); tone(990,.16,'triangle',.09); },
-  bad(){ tone(180,.22,'sawtooth',0,.12); tone(140,.25,'sawtooth',.1,.1); },
+  ok(){ tone(660,.1,'triangle'); tone(990,.16,'triangle',.09); buzz(25); },
+  bad(){ tone(180,.22,'sawtooth',0,.12); tone(140,.25,'sawtooth',.1,.1); buzz([40,40,40]); },
   click(){ tone(880,.04,'square',0,.05); },
   flip(){ tone(520,.06,'sine',0,.1); tone(780,.06,'sine',.05,.08); },
   win(){ [523,659,784,1047,1319].forEach((f,i)=>tone(f,.22,'triangle',i*.11,.16)); },
@@ -154,6 +156,11 @@ window.go = go;
 $$('nav.tabs button').forEach(b => b.addEventListener('click', () => { sfx.click(); go(b.dataset.v); }));
 
 /* ---------- HOME ---------- */
+function greet() {
+  const h = new Date().getHours();
+  const [jp, hi] = h < 11 ? ['おはよう', 'सुप्रभात'] : h < 18 ? ['こんにちは', 'नमस्ते'] : ['こんばんは', 'शुभ संध्या'];
+  return `<span class="jp">${jp}、シヴァニさん！</span><br><span class="hi">${hi}, शिवानी!</span>`;
+}
 function renderHome() {
   const nd = nextDay(), day = DAYS[nd - 1];
   const doneCount = DAYS.filter(x => isDone(x.d)).length;
@@ -164,14 +171,19 @@ function renderHome() {
   <div class="hero">
     <div class="sun"></div>
     <div style="position:relative;z-index:1">
+      <p class="hello">${greet()}</p>
       <h1>${doneCount === 30 ? 'おめでとう! You graduated 🎓' : 'Today: Day ' + nd + ' — ' + esc(day.title)}</h1>
       <p class="hi">${doneCount ? 'शाबाश! रोज़ एक पाठ — 30 दिन में जापानी की मज़बूत नींव।' : 'शून्य से शुरू करें — हिंदी की मदद से जापानी सीखें। रोज़ बस 20–30 मिनट!'}</p>
       <div class="row">
         <button class="btn" onclick="go('lesson',${nd})">▶ ${isDone(nd) ? 'Review' : (dayState(nd).steps.learn ? 'Continue' : 'Start')} Day ${nd}</button>
-        <button class="btn" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);box-shadow:none" onclick="go('write')">✍️ Print a writing sheet</button>
+        <button class="btn line" onclick="go('write')">✍️ Writing sheet</button>
       </div>
     </div>
-    <div class="mascot" title="Neko-sensei">🐱</div>
+    <svg class="crane" aria-hidden="true"><use href="#crane-w"/></svg>
+  </div>
+  <div class="card install tape" id="homeInstall" style="margin-top:22px;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="font-size:1.8rem">📲</span><div style="flex:1;min-width:180px"><b class="zen">Install Nihongo Yatra as an app</b><br><small class="muted">Works offline · opens full-screen from your home screen</small></div>
+    <button class="btn red sm" onclick="installApp()">Install</button>
   </div>
   <div class="statgrid">
     <div class="stat"><b>🔥 ${S.streak}</b><span>day streak</span></div>
@@ -205,6 +217,7 @@ function renderHome() {
     if (!unlocked(d)) { sfx.bad(); toast('🔒 Finish Day ' + (d - 1) + ' first (or enable “Unlock all days” in Settings)'); return; }
     sfx.click(); go('lesson', d);
   }));
+  if (typeof showInstall === 'function') showInstall();
 }
 
 /* ---------- LESSON content builders ---------- */
@@ -286,8 +299,11 @@ window.closeModal = closeModal;
 function certificate() {
   return `<div style="border:3px double var(--red);border-radius:12px;padding:12px;margin:10px 0">
     <div class="kl" style="font-size:1.6rem;color:var(--red)">修了証</div>
-    <b>Certificate of Completion</b><br><span class="muted">Nihongo Yatra · 30-day Japanese foundation</span><br>
-    <span class="muted">${new Date().toLocaleDateString()} · ${S.xp} XP</span></div>`;
+    <b>Certificate of Completion</b><br><span class="muted">awarded to</span><br>
+    <b class="zen" style="font-size:1.35rem">Shivani Modi</b> <span class="jp muted">シヴァニ・モディ</span><br>
+    <span class="muted">Nihongo Yatra · 30-day Japanese foundation</span><br>
+    <span class="muted">${new Date().toLocaleDateString()} · ${S.xp} XP</span><br>
+    <small class="muted">Designed &amp; developed by Parth D. Joshi</small></div>`;
 }
 
 /* --- step 1: learn --- */
@@ -839,7 +855,18 @@ function renderSettings() {
       <label class="row" style="margin-top:12px;gap:6px"><input type="checkbox" id="sSfx" ${st.sfx ? 'checked' : ''}> Sound effects</label>
       <label class="row" style="margin-top:6px;gap:6px"><input type="checkbox" id="sUnlock" ${st.unlockAll ? 'checked' : ''}> Unlock all days (skip ahead)</label>
       <div class="row" style="margin-top:16px"><button class="btn ghost sm" id="sReset">♻️ Reset all progress</button></div>
-      <p class="muted" style="font-size:.85rem">Progress is saved in this browser only. Voices come from your device — for best results use Chrome or Edge, and install Japanese &amp; Hindi voices in your system’s text-to-speech settings.</p>
+      <p class="muted" style="font-size:.85rem">Progress is saved on this device only. Voices come from your device — for best results use Chrome or Edge, and install Japanese &amp; Hindi voices in your system’s text-to-speech settings.</p>
+    </div>
+    <div class="card alt" style="margin-top:22px">
+      <h3>📲 Install as an app</h3>
+      <p class="muted" style="margin-top:0">${isStandalone() ? '✅ You are using the installed app. よくできました!' : 'Add Nihongo Yatra to your home screen — it opens full-screen and works offline.'}</p>
+      ${isStandalone() ? '' : '<button class="btn red" onclick="installApp()">📲 Install / Add to Home Screen</button>'}
+    </div>
+    <div class="card" style="margin-top:22px;text-align:center">
+      <div class="credit" style="padding:4px 0 0"><div class="hanko">心<br>友</div>
+      <div class="for">Specially designed &amp; developed for <b>Shivani Modi</b></div>
+      <div>by <b>Parth D. Joshi</b></div>
+      <small>Nihongo Yatra · v2 · 30-day Japanese course with Hindi analogies</small></div>
     </div>`;
   $('#sTheme').value = st.theme;
   $('#sJa').onchange = e => { st.jaVoice = e.target.value; save(); };
@@ -855,4 +882,36 @@ function renderSettings() {
 /* ---------- boot ---------- */
 applyTheme(); header(); renderHome();
 document.fonts && document.fonts.load('40px "Klee One"', 'あア');
+
+/* ---------- splash ---------- */
+(() => {
+  const sp = $('#splash'); let seen = false;
+  try { seen = sessionStorage.getItem('nySplash') === '1'; sessionStorage.setItem('nySplash', '1'); } catch (e) {}
+  const hide = () => { sp.classList.add('hide'); setTimeout(() => sp.remove(), 600); };
+  if (seen) sp.remove(); else { sp.addEventListener('click', hide); setTimeout(hide, 2300); }
+})();
+
+/* ---------- PWA: offline + install ---------- */
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); }
+function isStandalone() { return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; }
+function showInstall() { const h = $('#homeInstall'); if (h) h.classList.toggle('on', !isStandalone() && (!!deferredPrompt || isIOS())); }
+addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; showInstall(); });
+addEventListener('appinstalled', () => { deferredPrompt = null; showInstall(); toast('📲 Installed! Open Nihongo Yatra from your home screen.'); });
+async function installApp() {
+  if (deferredPrompt) { deferredPrompt.prompt(); try { await deferredPrompt.userChoice; } catch (e) {} deferredPrompt = null; showInstall(); return; }
+  if (isIOS()) return modal(`<div style="font-size:2.6rem">📲</div><h2>Add to iPhone home screen</h2>
+    <ol style="text-align:left;line-height:1.9"><li>Open this page in <b>Safari</b></li><li>Tap the <b>Share</b> button <span style="font-size:1.2rem">⬆︎</span> (bottom bar)</li>
+    <li>Scroll and tap <b>“Add to Home Screen”</b> ➕</li><li>Tap <b>Add</b> — the 日 icon appears on your home screen</li></ol>
+    <button class="btn red" onclick="closeModal()">わかりました! Got it</button>`);
+  modal(`<div style="font-size:2.6rem">📲</div><h2>Install the app</h2>
+    <ol style="text-align:left;line-height:1.9"><li>Open this page in <b>Chrome</b> (Android) or Chrome/Edge (computer)</li>
+    <li>Tap the <b>⋮ menu</b></li><li>Choose <b>“Install app”</b> or <b>“Add to Home screen”</b></li></ol>
+    <p class="muted" style="font-size:.85rem">The page must be opened from an https:// address for installing to work.</p>
+    <button class="btn red" onclick="closeModal()">Got it</button>`);
+}
+window.installApp = installApp;
+showInstall();
 })();
