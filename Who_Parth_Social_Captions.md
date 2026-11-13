@@ -130,8 +130,7 @@ Indian classical beats, sitar, aur Hindi + Gujarati + English rap ka ek mix.
 0:46 Hook
 1:08 Verse 2
 1:24 Gujarati Rap
-1:50 English Rap
-2:00 Bridge
+1:50 English Rap + Bridge
 2:06 Final Hook
 2:19 Outro
 
